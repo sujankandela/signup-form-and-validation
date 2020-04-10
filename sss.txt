@@ -1,0 +1,52 @@
+
+<?php
+
+$conn = mysqli_connect('localhost','root','','cse');
+
+if(!$conn)
+        {
+                echo "NOT CONNECTED to ANY server";
+        }
+if(!mysqli_select_db($conn,'formtable'))
+        {
+                echo "DATABSE not CREATED SORRY";
+        }
+$Name = $_POST('username');
+$Password= $_POST('password');
+$cnfpassword= $_post('confirmpassword');
+$email= $_POST('email');
+$sql = "INSERT INTO formtable (username,password,confirmpassword,email) VALUES ('$Name','$Password',$confirmpassword,$e$
+if(!mysqli_query($conn,$sql))
+{
+        echo "NO DATA INSERTED";
+}
+else
+{
+        echo " DATA INSERTED";
+}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

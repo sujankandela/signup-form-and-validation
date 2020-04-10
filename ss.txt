@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<HTML>
+<body>
+<div class="signup-form">
+    <form action="" method="post">
+        <h2>Sign Up form</h2>
+        <p class="hint-text">Create your account Today</p>
+<?php if (count($errors) > 0): ?>
+  <div class="alert alert-danger">
+    <?php foreach ($errors as $error): ?>
+    <li>
+      <?php echo $error; ?>
+    </li>
+    <?php endforeach;?>
+  </div>
+<?php endif;?>
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="UserName" required="required" onBlur="checkUsernameAvailability()"  pattern="[a-zA-Z\s]+">
+            <span id="username-availability-status" style="font-size:12px;"></span>         
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="email" placeholder="Email" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password" required="required"pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="passwordConf" placeholder="Confirm Password" required="required">
+        </div>        
+        <div class="form-group">
+            <button type="submit" name="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+        </div>
+    <div class="text-center">Already have an account? <a href="login.php">Login</a></div>
+    </form>
+</div>
+
+</body>
+</html>  
